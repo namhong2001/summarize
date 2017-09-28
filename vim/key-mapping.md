@@ -19,7 +19,7 @@ vim 에서 custom 단축키나 명령어를 설정하는 방법
 
     :LivedownToggle
 
-좀더 자세한 정보는 [vimrc-configuration]를 보도록 한다     
+좀더 자세한 정보는 [vimrc-configuration]를 보도록 한다
     
          
 
