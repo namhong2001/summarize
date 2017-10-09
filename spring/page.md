@@ -3,6 +3,26 @@ Page
 
 Paginiation을 간편히 구현할 수 있다.
 
+## Request params 를 pageable로 받기
+    public Page<MyClass> someMethod(
+		HttpServletRequest request,
+		@PageableDefault Pageable pageable
+	) {
+	    ...
+    }    
+이런식으로 Pageable 객체로 받으려면 그냥은 안받아지고 다음의 설정을 추가해줘야 한다.
+[link](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#core.web)
+
+    @Configuration
+    @EnableWebMvc
+    @EnableSpringDataWebSupport
+    class WebConfiguration {} 
+
+### 참고할만한 링크
+* <http://millky.com/@origoni/post/1171?language=ko_kr>
+
+
+
 ## 주의점
 
 restTemplate 으로 응답을 받을 때, 응답이 Jackson converter를 통해 바로 변환이 되지 않는다.
@@ -22,6 +42,6 @@ restTemplate 으로 응답을 받을 때, 응답이 Jackson converter를 통해 
 
 ## 참고
 
-<https://stackoverflow.com/questions/34099559/how-to-consume-pageentity-response-using-spring-resttemplate>
-<https://blog.thecookinkitchen.com/how-to-consume-page-response-from-a-service-in-spring-boot-97293c18ba>
-
+* <https://stackoverflow.com/questions/34099559/how-to-consume-pageentity-response-using-spring-resttemplate>
+* <https://blog.thecookinkitchen.com/how-to-consume-page-response-from-a-service-in-spring-boot-97293c18ba>
+* <https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#core.web>
